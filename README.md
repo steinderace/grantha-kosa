@@ -1,135 +1,113 @@
-# Turborepo starter
+# Grantha-Kosa
 
-This Turborepo starter is maintained by the Turborepo core team.
+**ग्रन्थकोश** (Grantha-Kosa) - Sanskrit for "treasury of books"
 
-## Using this example
+A personal web application for managing your book inventory, tracking your reading journey, and organizing your literary collection.
 
-Run the following command:
+## Overview
 
-```sh
-npx create-turbo@latest
-```
+Grantha-Kosa is a comprehensive book inventory manager that helps you maintain and organize your personal library across three key categories:
 
-## What's inside?
+- **Read** - Books you've completed
+- **Currently Reading** - Books you're actively reading
+- **Want to Read** - Your reading wishlist
 
-This Turborepo includes the following packages/apps:
+## Features
 
-### Apps and Packages
+- Track books across different reading states
+- Organize and categorize your personal library
+- Search and filter your book collection
+- Maintain reading history and progress
+- Clean, intuitive user interface
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+## Project Structure
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
+This is a monorepo containing all components of the Grantha-Kosa application:
 
 ```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build
-yarn dlx turbo build
-pnpm exec turbo build
+grantha-kosa/
+├── packages/
+│   ├── frontend/          # Web application frontend
+│   ├── backend/           # API server and business logic
+│   └── shared/            # Shared types and utilities
+├── README.md
+└── package.json
 ```
 
-You can build a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
+## Getting Started
 
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo build --filter=docs
+### Prerequisites
 
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo build --filter=docs
-yarn exec turbo build --filter=docs
-pnpm exec turbo build --filter=docs
-```
+- Node.js (v18 or higher)
+- npm or yarn
+- Database (PostgreSQL/MongoDB recommended)
 
-### Develop
+### Installation
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev
-yarn exec turbo dev
-pnpm exec turbo dev
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd grantha-kosa
 ```
 
-You can develop a specific package by using a [filter](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters):
-
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo dev --filter=web
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo dev --filter=web
-yarn exec turbo dev --filter=web
-pnpm exec turbo dev --filter=web
+2. Install dependencies:
+```bash
+npm install
 ```
 
-### Remote Caching
-
-> [!TIP]
-> Vercel Remote Cache is free for all plans. Get started today at [vercel.com](https://vercel.com/signup?/signup?utm_source=remote-cache-sdk&utm_campaign=free_remote_cache).
-
-Turborepo can use a technique known as [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
-
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup?utm_source=turborepo-examples), then enter the following commands:
-
-```
-cd my-turborepo
-
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo login
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo login
-yarn exec turbo login
-pnpm exec turbo login
+3. Set up environment variables:
+```bash
+cp .env.example .env
 ```
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
-
-```
-# With [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation) installed (recommended)
-turbo link
-
-# Without [global `turbo`](https://turborepo.dev/docs/getting-started/installation#global-installation), use your package manager
-npx turbo link
-yarn exec turbo link
-pnpm exec turbo link
+4. Start the development server:
+```bash
+npm run dev
 ```
 
-## Useful Links
+## Tech Stack
 
-Learn more about the power of Turborepo:
+- **Frontend**: [Your chosen framework - React, Vue, Svelte, etc.]
+- **Backend**: [Your chosen framework - Express, NestJS, etc.]
+- **Database**: [Your chosen database]
+- **Language**: TypeScript
 
-- [Tasks](https://turborepo.dev/docs/crafting-your-repository/running-tasks)
-- [Caching](https://turborepo.dev/docs/crafting-your-repository/caching)
-- [Remote Caching](https://turborepo.dev/docs/core-concepts/remote-caching)
-- [Filtering](https://turborepo.dev/docs/crafting-your-repository/running-tasks#using-filters)
-- [Configuration Options](https://turborepo.dev/docs/reference/configuration)
-- [CLI Usage](https://turborepo.dev/docs/reference/command-line-reference)
+## Development
+
+### Running Tests
+
+```bash
+npm run test
+```
+
+### Building for Production
+
+```bash
+npm run build
+```
+
+### Linting
+
+```bash
+npm run lint
+```
+
+## Contributing
+
+This is a personal project, but suggestions and feedback are welcome.
+
+## License
+
+[Yet to be chosen]
+
+## Acknowledgments
+
+The name **Grantha-Kosa** (ग्रन्थकोश) derives from Sanskrit:
+- **Grantha** (ग्रन्थ) - book, text, literary work
+- **Kosa** (कोश) - treasury, collection, repository
+
+Together, they form "a treasury of books" - a fitting name for a personal library management system.
+
+---
+
+*Built with ❤️ for book lovers*
